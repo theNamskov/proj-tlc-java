@@ -36,10 +36,7 @@ public class Register {
       sb.append("\n\n\t"+item);
       sb.append("\n================\n");
       
-      List<String> filtered = register
-        .stream()
-        .filter(student -> student.getLevel() == item)
-        .map(student -> student.getName()).collect(ArrayList::new, ArrayList::add, ArrayList::addAll);
+      List<String> filtered = getRegisterByLevel(item);
 
       for(String name : filtered) {
         sb.append(name);
